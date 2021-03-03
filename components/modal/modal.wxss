@@ -1,0 +1,10 @@
+.modal {
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 995;
+  transition: opacity 0.2s ease-in-out;
+}

@@ -1,0 +1,10 @@
+<view class="container wraper">
+
+  <block wx:for="{{user}}" wx:key="index">
+    <view>
+      {{index}} : {{item}}
+    </view>
+    <view class="line"></view>
+  </block>
+
+</view>

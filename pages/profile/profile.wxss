@@ -1,0 +1,10 @@
+.wraper {
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  width: 100vw;
+  height: 1px;
+  background-color: #ddd;
+}

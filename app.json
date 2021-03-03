@@ -1,13 +1,14 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/login/login",
+    "pages/profile/profile",
+    "pages/udi/udi"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#1474a4",
+    "navigationBarTitleText": "UDI - POC",
+    "navigationBarTextStyle":"white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

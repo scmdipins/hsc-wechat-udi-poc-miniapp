@@ -1,0 +1,17 @@
+<modal backgroundColor="rgba(0,0,0,0.6)" show="{{showPrivacyModal}}">
+
+  <view class="privacy-box">
+    <view class="title">个人隐私保护指引</view>
+    <view class="content">
+      我们将通过<text class="concept">《隐私政策》</text>和<text
+        class="concept">《用户协议》</text>帮助你了解我们收集、使用、存储和共享个人信息的情况，特别是我们所采集的个人信息类型与用途的对应关系。此外，你还能了解到你所享有的权利及实现途径，以及我们为保护你的个人信息所采用的安全技术。你需充分阅读并理解本政策的内容，若你同意，请点击下方按钮开始接受我们的服务。
+    </view>
+    <view class="btn-box">
+      <button class="btn-accept" open-type="getPhoneNumber"
+        bindgetphonenumber="getPhoneNumber" hover-class="none">同意协议并继续
+      </button>
+      <view class="btn-reject" bindtap="reject">不同意并退出</view>
+    </view>
+  </view>
+
+</modal>

@@ -1,0 +1,3 @@
+<view bindtap="onOverlayClick" class="modal" hidden="{{!showModal}}" style="background-color: {{backgroundColor}}; opacity:{{opacity}};">
+  <slot></slot>
+</view>

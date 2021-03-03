@@ -1,0 +1,59 @@
+.privacy-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: normal;
+} 
+
+.title {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.content {
+  width: 100%;
+  padding: 0 4.4vw;
+  box-sizing: border-box;
+}
+
+.concept {
+  color: #5a9ada;
+}
+
+.btn-box {
+  width: 100%;
+  padding: 0 4.4vw;
+  box-sizing: border-box;
+  padding-top: 4.4vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-accept, .btn-reject {
+  width: 100% !important;
+  height: 6.63vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-accept {
+  border-radius: 6rpx;
+  background-color: #31b94d;
+  color: #fff;
+}

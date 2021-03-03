@@ -1,0 +1,38 @@
+<view hidden="{{!render}}" class="container wrapper">
+
+  <view class="header">
+    <view class="logo">
+      <image class="img-logo"></image>
+    </view>
+    <view class='title'>Philips UDI POC</view>
+  </view>
+
+  <view class="footer">
+
+    <block wx:if="{{hasUserInfo}}">
+      <button class="auth-box" bindtap="wxLogin" hover-class="none">
+        <view class="auth-content">
+          <image class="img-wechat"></image>
+          <view>WeChat login</view>
+        </view>
+      </button>
+    </block>
+
+    <block wx:else>
+      <button class="auth-box" open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
+        <view class="auth-content">
+          <image class="img-wechat"></image>
+          <view>WeChat login</view>
+        </view>
+      </button>
+    </block>
+
+    <view hidden class='btn-login' bindtap="onSignUp">Sign up/login with other mobile number</view>
+
+    <view class="btn-login" bindtap="tradLogin">Traditional Login</view>
+
+  </view>
+
+</view>
+
+<privacy-modal id="privacyModal" bind:accept="privacyConfirm" bind:phone="goWebView"></privacy-modal>
