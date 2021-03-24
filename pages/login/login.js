@@ -3,7 +3,7 @@ const tokenServe = require('../../services/tokenService')
 const toast = require('../../utils/toast')
 const string = require('../../utils/string')
 // TODO dynamic path 
-var path = '../profile/profile'
+var path = '../setting/setting'
 
 Page({
 
@@ -155,7 +155,7 @@ Page({
   },
 
   goWebView: function (e) {
-    app.globalData.type = 'wechat'
+    wx.setStorageSync('type', 'wechat')
     wx.navigateTo({
       url: '../udi/udi',
     })
@@ -178,8 +178,15 @@ Page({
     console.log('upload userData...')
   },
 
+  onShow() {
+    app.globalData.AdobeSDK.trackState("show")
+  },
+
   tradLogin: function () {
-    app.globalData.type = 'trad'
+
+    app.globalData.AdobeSDK.trackAction("action", { "trdlogin": "click" });
+
+    wx.setStorageSync('type', 'trad')
     wx.navigateTo({
       url: '../udi/udi'
     })

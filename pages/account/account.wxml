@@ -1,0 +1,17 @@
+<view class='container wraper'>
+  <view class="header">
+    <view class="account-box" bindtap="showAccountHintModal">
+      <view class="left">
+        <image class="img-icon"></image>
+        <view class="title">Account setting</view>
+      </view>
+      <image class="img-nav"></image>
+    </view>
+    <view class="line"></view>
+  </view>
+  <view class='body'>
+    <view class="btn-logout" bindtap="logout">Logout</view>
+  </view>
+</view>
+
+<account-hint-modal id="hintModal"></account-hint-modal>

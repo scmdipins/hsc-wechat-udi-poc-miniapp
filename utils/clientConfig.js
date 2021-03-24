@@ -7,6 +7,17 @@ function getClient(type) {
   }
 }
 
+const IAMClient = {
+  domain: 'https://iamcd55.ap3.hsdp.io/',
+  redirectUri: 'https://www.philips.com',
+  provider: 'pimdemoapp2',
+  credential: {
+    username: 'demoappclient',
+    password: 'Philips@2021'
+  }
+}
+
 module.exports = {
-  client: getClient
+  client: getClient,
+  iamClient: IAMClient
 }

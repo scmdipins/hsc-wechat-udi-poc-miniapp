@@ -1,0 +1,35 @@
+.wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view-box {
+  width: 91.2vw !important;
+  margin: 1vh 0;
+  padding: 1.5vh 0;
+  border-radius: 4rpx;
+  background-color: #1c2d66;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-360deg);
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.active {
+  background-color: #1474a4;
+}
+
+.img-manager {
+  width: 6.4vw;
+  height: 6.4vw;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADzUlEQVRYR82XeahVVRjFf6t5gIgsKsgSGwibiDIiE0rLpDAtwgyaLIhGwsggtajQoCiCKOyPiiBMS0gMm+yPolCEoIgmMqJ5ooGkAbVhxXrs+zrqPfec+94D23D/uOy9v732t9da33fEdh7azufTE4DtXYFrgdOBccCBwAfAu8AySauHe4FaALbHA0uAw4G/gbXAP8B+BUzOXhqAkn4ZKpCuAGyfCrwK7FQOmSfps84hts8B7i1APgLGS/p1KCC2AWB7N+BzYBQwQ9KqboFt7wg8BlwGPCLpmpECkDd/OD9J1/cKanuXAnZfYH9JP/cLolsGQqwzgWMkvdcU0PYiYB5wpaTHm9ZvPd8NwCfAAZL2bBPM9rnASmCRpAVt9lTXdAPwPjBW0u5tgtmeAawAbpO0sM2eJgDPAucBx0qK3nsO23cDtwIXSnqmaX2bJ7gIeApYLCmErB1FMZ8Ce8UfJP0xEgB2BtYDo4Hpkp5vIcP7JM3t9/CsrzOik4A1xYiSjfldjOge4CjgQ+A4SX+OGIAEsn1KeYpDelhx+BL5DVix7SlFkvn7AzBTknsBq8tAXO4WYE7x/roY64AXgUeBn4CXgNMqi8+XtMJ2SP2KpN/akDDulqCTgM3FFVMXkuqvgYOAE0qVnFgJ+CMQRxxQg+23gOOB1JAxwMfAZElfNslwWYIAbwOzJIWQ2wzbZxWg38cDUpCAJ8OdpN12SvdVwB5AyvqNwDsBVX2WLZ7A9mwgdvo6cEYvYtk+tKhljqQHmwhoO9l7U1KMa3AMArAd+X0LxILHSMrNennAkaU5WSLpks5C22cD+5SG5a9CzoNL0VolaVodgEw816a02r450gT2BiZISrMSFXRcNH/TJ0yR9EWZC0HzbCHu5ZIy/58P2L4fuAmYKunlhtvnLY8Gpkl6oRxwWCHaa4W46ZaWSrq0zIegtwM3ALMlPbE1gA76IySFsb3Sn74wBSvNy8CwfWLeuBx+R0n5OkmTK2tSrJK5rgAivalpPCV91wAgt5sFbCwuuL40J5Hq2Mre9IuLC8AQNbffFK+QlKfY4glaAygBO0VrsB2znTTHwKKQ5ZIi6WQn7V36jPBhoqQNHZBVFfQLIASM3S6UdGdDxuIF3xRlXF2ngn4BXFyMJ55xBXAy8EaH9eXmaenzi8SfDmBJqbKDYzgZyN50QtMr8fK+kyJL28uBCypzvxfVxNaHD6DcMG1bWB3fTysfcu4AfBV/AB4AHgLiG+myB7RfB+CugjjdcL6E+h62rysHZm+K02hJUUrt+H9/nPadgiFs+Belu5QwrfW1HgAAAABJRU5ErkJggg==');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 6.4vw;
+}

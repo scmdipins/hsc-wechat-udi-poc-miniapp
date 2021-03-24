@@ -21,9 +21,11 @@ Page({
 
   setUrl(state, codeChallenge, nonce) {
     var that = this
-    var type = app.globalData.type
+    var type = wx.getStorageSync('type')  
     var client = clientServe.client(type)
-    var url = client.domain + 'login/authorize?client_id=' + client.clientId + '&redirect_uri=' + client.redirectUri + '&response_type=code%20id_token&scope=openid%20profile%20phone&state=' + state + '&ui_locales=zh-CN&&code_challenge=' + codeChallenge + '&code_challenge_method=S256&nonce=' + nonce + '&resource=urn:ietf:params:oauth:client_id:501f7b8d-b612-4cd5-8d48-b0b7f7e11980'
+    var url = client.domain + 'login/authorize?client_id=' + client.clientId + '&redirect_uri=' + client.redirectUri + '&response_type=code%20id_token&scope=openid%20profile%20phone&state=' + state + '&ui_locales=zh-CN&code_challenge=' + codeChallenge + '&code_challenge_method=S256&nonce=' + nonce + 
+    // '&resource=urn:ietf:params:oauth:client_id:501f7b8d-b612-4cd5-8d48-b0b7f7e11980'
+    '&resource=urn:ietf:params:oauth:client_id:501f7b8d-b612-4cd5-8d48-b0b7f7e11980&resource=urn:ietf:params:oauth:client_id:10cd5e18-db6d-4f77-8e88-4439483608db'
 
     if ('wechat' == type) {
       wx.login({

@@ -1,0 +1,15 @@
+<modal backgroundColor="rgba(0,0,0,0.6)" show="{{showHintModal}}">
+
+  <view class="hint-box">
+    <view class="hint-dialog">
+      <view class="title">This feature is not available on mobile</view>
+      <view class="content">
+        Please login the philips account portal www.philipsaccount.com on your desktop to continue.
+      </view>
+      <view class="btn-box">
+        <view class="btn-ok" bindtap="confirm">OK</view>
+      </view>
+    </view>
+  </view>
+
+</modal>

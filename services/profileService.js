@@ -2,8 +2,10 @@ const app = getApp()
 const clientServe = require('../utils/clientConfig')
 
 const getUserInfo = token => {
+  wx.showLoading()
   var resp = {}
-  var client = clientServe.client(app.globalData.type)
+  var type = wx.getStorageSync('type')  
+  var client = clientServe.client(type)
   return new Promise((resolve, reject) => {
     wx.request({
       url: client.domain + 'profiles/oidc/userinfo',
@@ -16,6 +18,7 @@ const getUserInfo = token => {
         'client_id': client.clientId
       },
       success(res) {
+        wx.hideLoading()
         if (res.data.phone_number) {
           resp = {
             'status': true,
@@ -29,6 +32,7 @@ const getUserInfo = token => {
         return resolve(resp)
       },
       fail(e) {
+        wx.hideLoading()
         resp = getFailedResp('get profile failed')
         return reject(e)
       }

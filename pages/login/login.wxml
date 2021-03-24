@@ -29,7 +29,7 @@
 
     <view hidden class='btn-login' bindtap="onSignUp">Sign up/login with other mobile number</view>
 
-    <view class="btn-login" bindtap="tradLogin">Traditional Login</view>
+    <view class="btn-login" bindtap="tradLogin">Other phone number Login</view>
 
   </view>
 

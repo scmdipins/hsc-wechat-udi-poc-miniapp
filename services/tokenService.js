@@ -1,5 +1,6 @@
 const app = getApp()
 const clientServe = require('../utils/clientConfig')
+const accountServe = require('../services/accountService')
 
 const getAssertionToken = nonce => {
   var data = {
@@ -17,7 +18,8 @@ const getAssertionToken = nonce => {
   var requestData = {
     'data': data
   }
-  var client = clientServe.client(app.globalData.type) 
+  var type = wx.getStorageSync('type')
+  var client = clientServe.client(type) 
   return new Promise((resolve, reject) => {
     var resp = {}
     wx.request({
@@ -26,17 +28,19 @@ const getAssertionToken = nonce => {
       header: {
         'Api-Key': 'az6XV80qHM7LrQN1Qzo8m3M63z2Wig36g6fRBALg',
         'Api-Version': '1',
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Accept': '*/*'
       },
-      data: requestData,
+      data:requestData,
       success(res) {
+        console.log(res.data)
         if (res.data.data) {
           resp = {
             'status': true,
             'assertToken': res.data.data.identityAssertion
           }
         } else if (res.data.errors) {
-          resp = getFailedResp(res.data.errors.title)
+          resp = getFailedResp('get assertion token failed')
         } else {
           resp = getFailedResp('get assertion token failed')
         }
@@ -51,7 +55,8 @@ const getAssertionToken = nonce => {
 }
 
 const getToken = code => {
-  var client = clientServe.client(app.globalData.type)
+  var type = wx.getStorageSync('type') 
+  var client = clientServe.client(type)
   var data = {
     'grant_type': 'authorization_code',
     'code': code,
@@ -111,7 +116,8 @@ function json2Urlencoded(element, key, list) {
 
 const refreshToken = refreshToken => {
   var resp = {}
-  var client = clientServe.client(app.globalData.type)
+  var type = wx.getStorageSync('type')
+  var client = clientServe.client(type)
   return new Promise((resolve, reject) => {
     wx.request({
       url: client.domain + 'login/token',
@@ -149,6 +155,51 @@ const refreshToken = refreshToken => {
   })
 }
 
+const revokeToken = accessToken => {
+  var resp = {}
+  var type = wx.getStorageSync('type')
+  var client = clientServe.client(type)
+  wx.showLoading()
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: client.domain + '/login/token/revoke',
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: {
+        'token': accessToken,
+        'client_id': client.clientId,
+        'token_type_hint': 'access_token'
+      },
+      success(res) {
+        resp = {
+          'status': true
+        }
+        if ('trad' == type) {
+          accountServe.logout().then(res => {
+            wx.hideLoading()
+            return resolve(resp)
+          }).catch(res => {
+            wx.hideLoading()
+            resp = getFailedResp(res)
+            wx.hideLoading()
+            return resolve(resp)
+          })
+        } else {
+          wx.hideLoading()
+          return resolve(resp)
+        }
+      },
+      fail(e) {
+        wx.hideLoading()
+        resp = getFailedResp('revoke token failed')
+        return reject(resp)
+      }
+    })
+  })
+}
+
 function getFailedResp(errMsg) {
   return {
     'status': false,
@@ -159,5 +210,6 @@ function getFailedResp(errMsg) {
 module.exports = {
   getToken: getToken,
   refreshToken: refreshToken,
-  getAssertToken: getAssertionToken
+  getAssertToken: getAssertionToken,
+  revokeToken: revokeToken
 }

@@ -1,6 +1,22 @@
+const AdobeSDK = require('utils/AdobeSDK-1.0.0')
+
 App({
   onLaunch: function () {
     var that = this
+
+    // initialize the Adobe SDK
+    AdobeSDK.init({
+      "analytics.server": "api-stg.philips-healthsuitechina.com.cn",      //required
+      "analytics.rsids": "philips.reportsuite",    //required
+      "app.id": "adobe-demo",                        //required
+      "app.version": "0.0.0.1",           //optional, default value = ''
+      "analytics.offlineEnabled": true,   //optional, default value = false
+      "session.timeout": 30               //optional, default value = 30
+    });
+
+    // turn on logging & debug mode
+    AdobeSDK.setDebugLoggingEnabled(true)
+    AdobeSDK.setDebugModeEnabled(true)
 
     // 登录
     wx.login({
@@ -75,6 +91,6 @@ App({
     code: null,
     phoneData: null,
     userData: null,
-    type: null
+    AdobeSDK: AdobeSDK
   }
 })

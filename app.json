@@ -1,8 +1,12 @@
 {
   "pages":[
     "pages/login/login",
+    "pages/udi/udi",
+    "pages/setting/setting",
+    "pages/account/account",
     "pages/profile/profile",
-    "pages/udi/udi"
+    "pages/manager/manager",
+    "pages/iam/iam"
   ],
   "window":{
     "backgroundTextStyle":"light",

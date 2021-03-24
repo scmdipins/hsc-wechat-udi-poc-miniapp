@@ -8,11 +8,9 @@ Page({
   },
 
   onLoad: function (options) {
-    var token = JSON.parse(wx.getStorageSync('token'))
-    if (token) {
-      var accessToken = token.access_token
+    if(options.access_token) {
+      this.getProfile(options.access_token)
     }
-    this.getProfile(accessToken)
   },
 
   getProfile(token) {
@@ -29,4 +27,5 @@ Page({
       toast.showMsg(res.errMsg)
     })
   }
+  
 })

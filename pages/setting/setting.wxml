@@ -1,0 +1,23 @@
+<view class="container wraper">
+
+  <view class="view-box {{btnActive.profile? 'active' : ''}}" bindtap="goProfilePage">
+    <!-- <image class="img-manager"></image> -->
+    <view>Profile</view>
+  </view>
+
+  <view hidden="{{type !== 'trad'}}" class="view-box {{btnActive.manager? 'active' : ''}}" bindtap="goManagerPage">
+    <!-- <image class="img-manager"></image> -->
+    <view>Profile Manager</view>
+  </view>
+
+  <view class="view-box {{btnActive.iam? 'active' : ''}}" bindtap="iamAuth">
+    <!-- <image class="img-manager"></image> -->
+    <view>IAM Integrate</view>
+  </view>
+
+  <view class="view-box {{btnActive.account? 'active' : ''}}" bindtap="goAccountPage">
+    <!-- <image class="img-manager"></image> -->
+    <view>My Account</view>
+  </view>
+
+</view>
